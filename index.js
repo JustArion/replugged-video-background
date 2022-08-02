@@ -2,7 +2,7 @@ const { Plugin } = require('powercord/entities')
 const { React } = require('powercord/webpack')
 const Settings = require('./src/Components/Settings.jsx')
 
-const DefaultBackgroundLink = 'https://universe.communitydragon.org/events/2021/arcane-nlex-hub-2021/videos/collection-jayce.webm';
+const DefaultBackgroundLink = 'https://cdn.discordapp.com/attachments/883435300880261120/1003962526662410300/Dawn---hu.webm';
 
 module.exports = class VideoBackgrounds extends Plugin 
 {
@@ -41,11 +41,11 @@ module.exports = class VideoBackgrounds extends Plugin
 		this.VideoSection.setAttribute('class', 'background-video');
 
 		this.BackgroundSection.appendChild(this.VideoSection);
-
-		this.VideoSection.setAttribute('playsinline', '');
-		this.VideoSection.setAttribute('autoplay', '');
-		this.VideoSection.setAttribute('muted', '');
-		this.VideoSection.setAttribute('loop', '');
+		
+		this.VideoSection.autoplay = true;
+		this.VideoSection.muted = true;
+		this.VideoSection.loop = true;
+		this.VideoSection.playsInline = true;
 
 		this.VideoSource = document.createElement('source');
 		this.VideoSource.setAttribute('src', videoLink);
