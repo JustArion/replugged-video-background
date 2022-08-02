@@ -1,10 +1,8 @@
 const { Plugin } = require('powercord/entities')
 const { React } = require('powercord/webpack')
-const { inject, uninject } = require('powercord/injector')
 const Settings = require('./src/Components/Settings.jsx')
-const wind = require('electron').BrowserWindow;
 
-const DefaultBackgroundLink = 'https://cdn.discordapp.com/attachments/883435300880261120/1003924085128044574/Dawn---ht.webm';
+const DefaultBackgroundLink = 'https://cdn.discordapp.com/attachments/883435300880261120/1003962526662410300/Dawn---hu.webm';
 
 module.exports = class VideoBackgrounds extends Plugin 
 {
@@ -41,20 +39,23 @@ module.exports = class VideoBackgrounds extends Plugin
 		let videoLink = this.settings.get('VideoBackgroundLink', DefaultBackgroundLink);
 		this.VideoSection = document.createElement('video');
 		this.VideoSection.setAttribute('class', 'background-video');
+
 		this.BackgroundSection.appendChild(this.VideoSection);
+
 		this.VideoSection.setAttribute('playsinline', '');
 		this.VideoSection.setAttribute('autoplay', '');
 		this.VideoSection.setAttribute('muted', '');
 		this.VideoSection.setAttribute('loop', '');
+
 		this.VideoSource = document.createElement('source');
 		this.VideoSource.setAttribute('src', videoLink);
+
 		this.VideoSection.appendChild(this.VideoSource);
-		
 	}
 
     async pluginWillUnload() 
 	{
 		powercord.api.settings.unregisterSettings(this.entityID);
-		document.getElementById(this.entityID).remove();
+		document.getElementById(this.entityID)?.remove();
     }
 }

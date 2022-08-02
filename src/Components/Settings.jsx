@@ -31,12 +31,11 @@ module.exports = class Settings extends React.Component
 			defaultValue={getSetting('VideoBackgroundLink', this.props.DefaultBackgroundLink)}
 			onChange={input => {
 				if (input.match(/^ *$/)) // If whitespace input is detected
-					return null
+					updateSetting(this.props.DefaultBackgroundLink);
 				else 
-				{
 					updateSetting('VideoBackgroundLink', input)
-					this.Reload();
-				}
+				
+				this.Reload();
 			}}>
 			Background Link
 			</TextInput>
