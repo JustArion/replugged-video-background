@@ -1,0 +1,23 @@
+@import 'placeholders.scss';
+
+*,::before,::after 
+{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.background-video 
+{
+  object-fit: cover;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  bottom: 0px;
+  z-index: -9999 // To go behind everything
+}
+// This is for the date seperator
+%separator-date
+{
+  background: none!important;
+}

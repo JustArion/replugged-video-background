@@ -1,0 +1,7 @@
+@import 'video-background.scss';
+
+.background-video 
+{
+  -webkit-transform: scaleX(-1);
+  transform: scale(-1, 1);
+}
