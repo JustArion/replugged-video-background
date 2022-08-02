@@ -2,7 +2,7 @@ const { Plugin } = require('powercord/entities')
 const { React } = require('powercord/webpack')
 const Settings = require('./src/Components/Settings.jsx')
 
-const DefaultBackgroundLink = 'https://cdn.discordapp.com/attachments/883435300880261120/1003962526662410300/Dawn---hu.webm';
+const DefaultBackgroundLink = 'https://universe.communitydragon.org/events/2021/arcane-nlex-hub-2021/videos/collection-jayce.webm';
 
 module.exports = class VideoBackgrounds extends Plugin 
 {

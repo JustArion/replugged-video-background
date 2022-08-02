@@ -11,7 +11,7 @@
 [Default Settings]
 UseVideoBackground = true
 FlipVideoBackground = false
-VideoBackgroundLink = 'https://cdn.discordapp.com/attachments/883435300880261120/1003962526662410300/Dawn---hu.webm'
+VideoBackgroundLink = 'https://universe.communitydragon.org/events/2021/arcane-nlex-hub-2021/videos/collection-jayce.webm'
 ```
 
 ### Requirements:
