@@ -1,11 +1,11 @@
 const { React } = require('powercord/webpack')
-const { SwitchItem, TextInput } = require('powercord/components/settings')
+const { SwitchItem, TextInput, SliderInput } = require('powercord/components/settings')
 
 module.exports = class Settings extends React.Component 
 {
 	render()
 	{
-		const { getSetting, toggleSetting, updateSetting} = this.props;
+		const { getSetting, toggleSetting, updateSetting, plugin} = this.props;
 
 		return (
 		<div>
@@ -31,14 +31,25 @@ module.exports = class Settings extends React.Component
 			defaultValue={getSetting('VideoBackgroundLink', this.props.DefaultBackgroundLink)}
 			onChange={input => {
 				if (input.match(/^ *$/)) // If whitespace input is detected
-					updateSetting(this.props.DefaultBackgroundLink);
-				else 
-					updateSetting('VideoBackgroundLink', input)
-				
-				this.Reload();
+					input = this.props.DefaultBackgroundLink;
+
+				plugin.SetVideoLink(input);
+				updateSetting('VideoBackgroundLink', input)
 			}}>
 			Background Link
 			</TextInput>
+			<SliderInput
+			minValue={0}
+			maxValue={100}
+			initialValue={getSetting('VideoBackgroundVolume', 0)}
+			markers={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]}
+			onValueChange={value => {
+				const volume = value / 100;
+				plugin.SetVideoVolume(volume);
+				updateSetting('VideoBackgroundVolume', value);
+			}}>
+			Video Volume
+			</SliderInput>
 		</div>
 		);
 	}

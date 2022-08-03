@@ -5,11 +5,11 @@
 
 ---
 
-#### Todo:
-Fix z-index of the background to have it display properly.
 
 ### Info
 <p align="left">Please, do not contact me for requests for plugins, I hate Javascript (the language this <u>thing</u> was written in, it was mostly just a personal project. If things are unoptimized, submit a PR and I will <b><u>maaaaybe</u></b> take a look at it and merge.</p>
+
+<p align="right">Oh yeah, you may want to get a theme for the plugin to work correctly. Themes change the layers of Discord around for it to work, and I am not planning on maintaining it when Discord changes their names for everything for that to break. I recommend [ClearVision](https://github.com/ClearVision/ClearVision-v6)</p>
 
 ```ini
 [Default Settings]
